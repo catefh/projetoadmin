@@ -1,0 +1,15 @@
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	
++++ b/templates/index.html	(date 1710620505416)
+@@ -1,3 +1,3 @@
+ {% for item in lista %}
+ {{item}} </br>
+-{% endfor %}
+\ No newline at end of file
++{% end for %}
+\ No newline at end of file
