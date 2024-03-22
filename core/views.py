@@ -11,3 +11,7 @@ def index(request):
         'lista': lista,
     }
     return render(request, 'index.html', context)
+
+def pesquisa(request, alim):
+    List = Produto.objects.all()
+    return render(request, 'exibir.html',{'List':List})
