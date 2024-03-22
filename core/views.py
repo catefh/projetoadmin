@@ -13,5 +13,9 @@ def index(request):
     return render(request, 'index.html', context)
 
 def pesquisa(request, alim):
-    List = Produto.objects.all()
-    return render(request, 'exibir.html',{'List':List})
+
+    busca = request.GET.get('alim')
+    List = Produto.objects.filter(nome__contains=alim)
+    if busca:
+        List = Produto.objects.filter(nome__contains = busca)
+    return render(request, 'exibir.html', {'List': List})
