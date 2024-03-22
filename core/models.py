@@ -12,5 +12,6 @@ class Produto(models.Model):
     preco = models.IntegerField()
     descricao = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+
     def __str__(self) -> str:
         return self.nome
