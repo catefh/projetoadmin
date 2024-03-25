@@ -20,8 +20,5 @@ def pesquisa(request, alim):
     return render(request, 'exibir.html', {'List': List})
 
 def nova(request, desc):
-    busca = request.GET.get('desc')
-    List = Produto.objects.filter(descricao__contains=desc)
-    if busca:
-        List = Produto.objects.filter(descricao__contains=busca)
-    return render(request, 'exibir.html', {'List': List})
+    lista_de_produtos = Produto.objects.filter(descricao__contains=desc)
+    return render(request, 'exibir.html', {'List': lista_de_produtos})
