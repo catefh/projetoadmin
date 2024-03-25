@@ -20,5 +20,5 @@ def pesquisa(request, alim):
     return render(request, 'exibir.html', {'List': List})
 
 def nova(request, desc):
-    lista_de_produtos = Produto.objects.filter(descricao__contains=desc)
+    lista_de_produtos = Produto.objects.filter(descricao__contains=)
     return render(request, 'exibir.html', {'List': lista_de_produtos})
