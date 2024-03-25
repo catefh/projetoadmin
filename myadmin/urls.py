@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('teste', views.index),
     path("<str:alim>/", views.pesquisa),
-    path("produtos/busca/str:alim>", views.nova),
+    path("produtos/busca", views.nova),
     path("produtos/busca", views.nova),
 
 ]
