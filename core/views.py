@@ -21,4 +21,7 @@ def pesquisa(request):
 
 def nova(request):
     lista_de_produtos = Produto.objects.filter()
+    descricao = request.GET.get('descricao')
+    if descricao:
+        lista_de_produtos = lista_de_produtos.filter(descricao__contains=descricao)
     return render(request, 'exibir.html', {'List': lista_de_produtos})
