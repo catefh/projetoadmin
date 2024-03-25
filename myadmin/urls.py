@@ -9,6 +9,5 @@ urlpatterns = [
     path('teste', views.index),
     path("<str:alim>/", views.pesquisa),
     path("produtos/busca", views.nova),
-    path("produtos/busca", views.nova),
 
 ]
