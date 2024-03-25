@@ -12,10 +12,10 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def pesquisa(request, alim):
-    lista_de_produtos = Produto.objects.filter(nome__contains=)
+def pesquisa(request):
+    lista_de_produtos = Produto.objects.filter()
     return render(request, 'exibir.html', {'List': lista_de_produtos})
 
-def nova(request, desc):
-    lista_de_produtos = Produto.objects.filter(descricao__contains=)
+def nova(request):
+    lista_de_produtos = Produto.objects.filter()
     return render(request, 'exibir.html', {'List': lista_de_produtos})
