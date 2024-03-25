@@ -13,11 +13,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 def pesquisa(request, alim):
-    busca = request.GET.get('alim')
-    List = Produto.objects.filter(nome__contains=alim)
-    if busca:
-        List = Produto.objects.filter(nome__contains = busca)
-    return render(request, 'exibir.html', {'List': List})
+    lista_de_produtos = Produto.objects.filter(nome__contains=)
+    return render(request, 'exibir.html', {'List': lista_de_produtos})
 
 def nova(request, desc):
     lista_de_produtos = Produto.objects.filter(descricao__contains=)
