@@ -1,3 +1,51 @@
-{% for item in List%}
-{{ item }}</br>
-{% endfor %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listando</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(150, 212, 212, 0.4);
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th>Descrição</th>
+  </tr>
+    {% for item in List%}
+  <tr>
+    <td>{{item.nome}}</td>
+    <td>{{item.preco}}</td>
+    <td>{{item.descricao}}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+

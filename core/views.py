@@ -14,7 +14,7 @@ def index(request):
 
 def pesquisa(request):
     lista_de_produtos = Produto.objects.filter()
-    
+
     nome = request.GET.get('nome')
     if nome:
         lista_de_produtos = lista_de_produtos.filter(nome__contains=nome)
@@ -22,4 +22,9 @@ def pesquisa(request):
     descricao = request.GET.get('descricao')
     if descricao:
         lista_de_produtos = lista_de_produtos.filter(descricao__contains=descricao)
+
+    categoria = request.GET.get('categoria')
+    if categoria:
+        lista_de_produtos = lista_de_produtos.filter(categoria__nome__contains=categoria)
+        
     return render(request, 'exibir.html', {'List': lista_de_produtos})
