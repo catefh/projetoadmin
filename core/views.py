@@ -33,8 +33,8 @@ def pesquisa(request):
 def listView (request, id):
     lista_de_produtos = Produto.objects.all()
 
-    categoria = request.GET.get('categoria')
-    if categoria:
+    produtos = request.GET.get('produtos')
+    if produto:
         lista_de_produtos = lista_de_produtos.filter(categoria_id__contains=id)
 
     return render(request, 'idhtml.html', {'List': lista_de_produtos})
