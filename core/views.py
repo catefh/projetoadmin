@@ -28,3 +28,13 @@ def pesquisa(request):
         lista_de_produtos = lista_de_produtos.filter(categoria__nome__contains=categoria)
         
     return render(request, 'exibir.html', {'List': lista_de_produtos})
+
+
+def listView (request, id):
+    lista_de_produtos = Produto.objects.all()
+
+    categoria = request.GET.get('categoria')
+    if categoria:
+        lista_de_produtos = lista_de_produtos.filter(categoria_id__contains=id)
+
+    return render(request, 'idhtml.html', {'List': lista_de_produtos})
