@@ -37,4 +37,4 @@ def listView (request, cat_id):
     if categoria:
         lista_de_produtos = lista_de_produtos.filter(categoria_id=cat_id)
 
-    return render(request, 'idhtml.html', {'List': lista_de_produtos})
+    return render(request, 'exibir.html', {'List': lista_de_produtos})
