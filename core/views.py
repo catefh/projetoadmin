@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from core.models import Produto
+from core.models import Produto, Categoria
 
 
 # Create your views here.
@@ -31,10 +31,10 @@ def pesquisa(request):
 
 
 def listView (request, id):
-    lista_de_produtos = Produto.objects.all()
+    lista_de_produtos = Produto.objects.filter()
 
     produtos = request.GET.get('produtos')
-    if produto:
-        lista_de_produtos = lista_de_produtos.filter(categoria_id__contains=id)
+    if produtos:
+        lista_de_produtos = lista_de_produtos.filter(categoria_id__contains="")
 
     return render(request, 'idhtml.html', {'List': lista_de_produtos})
