@@ -30,7 +30,7 @@ def pesquisa(request):
     return render(request, 'exibir.html', {'List': lista_de_produtos})
 
 
-def listView (request, id):
+def listView (request, categoria_id):
     lista_de_produtos = Produto.objects.all()
 
     categoria = request.GET.get('categoria')

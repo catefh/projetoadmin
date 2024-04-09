@@ -1,4 +1,4 @@
 {% for item in List%}
 {{ item }} ====>
-<td> <a href="/produtos/categoria/{item.id}"> {{item.categoria}}</a></td></br>
+<td> <a href="/produtos/categoria/{item.categoria.id}"> {{item.categoria}}</a></td></br>
 {% endfor %}
