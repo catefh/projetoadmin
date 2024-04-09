@@ -31,7 +31,7 @@ def pesquisa(request):
 
 
 def listView (request, cat_id):
-    lista_de_produtos = Produto.objects.all()
+    lista_de_produtos = Produto.objects.filter()
 
     categoria = request.GET.get('categoria')
     if categoria:
