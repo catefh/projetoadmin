@@ -30,11 +30,11 @@ def pesquisa(request):
     return render(request, 'exibir.html', {'List': lista_de_produtos})
 
 
-def listView (request, categoria_id):
+def listView (request, cat_id):
     lista_de_produtos = Produto.objects.all()
 
     categoria = request.GET.get('categoria')
     if categoria:
-        lista_de_produtos = lista_de_produtos.filter(categoria_id="id")
+        lista_de_produtos = lista_de_produtos.filter(categoria_id=cat_id)
 
     return render(request, 'idhtml.html', {'List': lista_de_produtos})
