@@ -35,6 +35,6 @@ def listView (request, id):
 
     produtos = request.GET.get('produtos')
     if produtos:
-        lista_de_produtos = lista_de_produtos.filter(categoria_id__contains="")
+        lista_de_produtos = lista_de_produtos.filter(categoria_id="")
 
     return render(request, 'idhtml.html', {'List': lista_de_produtos})
