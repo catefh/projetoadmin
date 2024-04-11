@@ -36,3 +36,18 @@ def listView (request, cat_id):
     lista_de_produtos = lista_de_produtos.filter(categoria_id=cat_id)
 
     return render(request, 'exibir.html', {'List': lista_de_produtos})
+
+
+def listId (request, cat_id):
+    lista_de_produtos = Produto.objects.filter()
+
+    lista_de_produtos = lista_de_produtos.filter(categoria_id=cat_id)
+
+    return render(request, 'idhtml.html', {'List': lista_de_produtos})
+
+
+def listProdutos (request):
+    lista_de_produtos = Produto.objects.all()
+
+
+    return render(request, 'listatodos.html', {'List': lista_de_produtos})

@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -42,7 +40,7 @@ th:nth-child(even),td:nth-child(even) {
     {% for item in List%}
   <tr>
     <td>{{item.nome}}</td>
-    <td> <a href="produtos/categoria/{item.categoria.id}"> {{item.categoria_id}}</a></td>
+    <td>{{item.categoria_id}}</td>
   </tr>
     {% endfor %}
 </table>
